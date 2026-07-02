@@ -143,8 +143,8 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealSections.forEach(section => revealObserver.observe(section));
 
 (function sendVisit(){
-  const URL = 'APPS_SCRIPT_URL';
-  const TOKEN = 'YOUR_SECRET_TOKEN';
+  const URL = 'REDACTED_URL';
+  const TOKEN = 'REDACTED';
   fetch(URL, {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
