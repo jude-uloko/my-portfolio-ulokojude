@@ -1,3 +1,25 @@
+addEventListener('DOMContentLoaded', () => {
+  (function sendVisit(){
+    const URL = 'REDACTED_URL';
+    const TOKEN = 'REDACTED';
+    
+    fetch(URL, {
+      method: 'POST',
+      // Note: We remove the 'application/json' header. 
+      // Google Apps Script prefers text/plain or no content-type headers 
+      // when handling requests from external website browsers to avoid CORS pre-flight blocks.
+      body: JSON.stringify({
+        token: TOKEN,
+        path: window.location.pathname + window.location.search,
+        ua: window.navigator.userAgent
+      })
+    })
+    .then(res => res.json())
+    .then(data => console.log('Log recorded:', data))
+    .catch((err)=> console.log('Logging failed:', err));
+  })();
+});
+
 function sendMessage(event) {
   if (event) {
     event.preventDefault();
@@ -142,16 +164,3 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealSections.forEach(section => revealObserver.observe(section));
 
-(function sendVisit(){
-  const URL = 'REDACTED_URL';
-  const TOKEN = 'REDACTED';
-  fetch(URL, {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
-      token: TOKEN,
-      path: location.pathname + location.search,
-      ua: navigator.userAgent
-    })
-  }).catch(()=>{ /* ignore logging failures */ });
-})();
