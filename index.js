@@ -1,30 +1,25 @@
 window.addEventListener('DOMContentLoaded', async () => {
   (async function sendVisit(){
-    const URL = 'REDACTED_URL';
-    const TOKEN = 'REDACTED';
-    
     let userIp = 'Unknown';
     try {
-      // Fetch the visitor's public IP address
       const ipRes = await fetch('REDACTED_URL');
       const ipData = await ipRes.json();
       userIp = ipData.ip;
     } catch (e) {
-      /* If an adblocker blocks the IP API, it falls back gracefully */
+      // Fallback if adblocker blocks ipify
     }
     
-    fetch(URL, {
+    // We send the log to our OWN local Vercel serverless backend endpoint
+    fetch('/api/log', {
       method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        token: TOKEN,
         path: window.location.pathname + window.location.search,
         ua: window.navigator.userAgent,
-        ip: userIp // <--- Sends the IP address to your Google Script
+        ip: userIp
       })
     })
-    .then(res => res.json())
-    .then(data => console.log('Log recorded:', data))
-    .catch((err)=> console.log('Logging failed:', err));
+    .catch(() => { /* Fail silently to protect user experience */ });
   })();
 });
 
