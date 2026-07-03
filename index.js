@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   (async function sendVisit(){
     let userIp = 'Unknown';
     try {
-      const ipRes = await fetch('REDACTED_URL');
+      const ipRes = await fetch('https://api.ipify.org?format=json');
       const ipData = await ipRes.json();
       userIp = ipData.ip;
     } catch (e) {
