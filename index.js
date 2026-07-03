@@ -1,26 +1,15 @@
-window.addEventListener('DOMContentLoaded', async () => {
-  (async function sendVisit(){
-    let userIp = 'Unknown';
-    try {
-      // 🌟 FIXED: Changed http to https
-      const ipRes = await fetch('https://api.ipify.org?format=json');
-      const ipData = await ipRes.json();
-      userIp = ipData.ip;
-    } catch (e) {
-      // Fallback if adblocker blocks ipify
-    }
-    
-    // We send the log to our OWN local Vercel serverless backend endpoint
+window.addEventListener('DOMContentLoaded', () => {
+  (function sendVisit(){
+    // We no longer fetch or send the IP from the browser!
     fetch('/api/log', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         path: window.location.pathname + window.location.search,
-        ua: window.navigator.userAgent,
-        ip: userIp
+        ua: window.navigator.userAgent
       })
     })
-    .catch(() => { /* Fail silently to protect user experience */ });
+    .catch(() => { /* Fail silently */ });
   })();
 });
 
