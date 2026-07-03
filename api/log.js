@@ -9,8 +9,14 @@ export default async function handler(req, res) {
     const GOOGLE_URL = process.env.APPS_SCRIPT_URL;
     const SECRET_TOKEN = process.env.VISIT_LOG_TOKEN;
 
-    // 3. Extract the visit data sent from the browser
-    const { path, ua, ip } = req.body;
+    // SAFETY CHECK: Force-parse the body if it arrives as a raw string instead of an object
+    let bodyData = req.body;
+    if (typeof bodyData === 'string') {
+      bodyData = JSON.parse(bodyData);
+    }
+
+    // 3. Extract the visit data sent from the browser safely
+    const { path, ua, ip } = bodyData;
 
     // 4. Safely forward the data to Google Sheets from the server backend
     const googleResponse = await fetch(GOOGLE_URL, {
