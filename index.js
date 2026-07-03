@@ -2,7 +2,8 @@ window.addEventListener('DOMContentLoaded', async () => {
   (async function sendVisit(){
     let userIp = 'Unknown';
     try {
-      const ipRes = await fetch('http://api.ipify.org?format=json');
+      // 🌟 FIXED: Changed http to https
+      const ipRes = await fetch('https://api.ipify.org?format=json');
       const ipData = await ipRes.json();
       userIp = ipData.ip;
     } catch (e) {
