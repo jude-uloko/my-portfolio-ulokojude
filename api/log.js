@@ -17,11 +17,9 @@ export default async function handler(req, res) {
 
     const { path, ua } = bodyData;
 
-    // Secure Patch: Use Vercel's edge-verified IP header to prevent header spoofing
     const rawIp = req.headers['x-vercel-forwarded-for'] || req.headers['x-real-ip'] || 'Unknown';
     const userIp = rawIp.split(',')[0].trim();
 
-    // --- RATE LIMIT BOUNCER START ---
     const now = Date.now();
     if (localRequestHistory.has(userIp)) {
       const lastVisitTime = localRequestHistory.get(userIp);
@@ -32,14 +30,11 @@ export default async function handler(req, res) {
       }
     }
 
-    // Record the current time for this IP address
     localRequestHistory.set(userIp, now);
 
-    // Keep memory clean: if the list gets too large, wipe it to keep it lightweight
     if (localRequestHistory.size > 1000) {
       localRequestHistory.clear();
     }
-    // --- RATE LIMIT BOUNCER END ---
 
     const googleResponse = await fetch(GOOGLE_URL, {
       method: 'POST',
