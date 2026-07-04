@@ -1,6 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
   (function sendVisit(){
-    // We no longer fetch or send the IP from the browser!
     fetch('/api/log', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
