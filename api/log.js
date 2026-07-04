@@ -1,3 +1,4 @@
+// A simple local memory cache to keep track of recent IP hits
 const localRequestHistory = new Map();
 
 export default async function handler(req, res) {
@@ -15,7 +16,9 @@ export default async function handler(req, res) {
     }
 
     const { path, ua } = bodyData;
-    const rawIp = req.headers['x-forwarded-for'] || req.headers['x-real-ip'] || 'Unknown';
+
+    // Secure Patch: Use Vercel's edge-verified IP header to prevent header spoofing
+    const rawIp = req.headers['x-vercel-forwarded-for'] || req.headers['x-real-ip'] || 'Unknown';
     const userIp = rawIp.split(',')[0].trim();
 
     // --- RATE LIMIT BOUNCER START ---
@@ -23,18 +26,20 @@ export default async function handler(req, res) {
     if (localRequestHistory.has(userIp)) {
       const lastVisitTime = localRequestHistory.get(userIp);
       
-      // If this specific IP hits the API again in less than 5 seconds, reject it!
+      // If this specific verified IP hits the API again in less than 5 seconds, reject it!
       if (now - lastVisitTime < 5000) {
         return res.status(429).json({ error: 'Too many requests. Slow down!' });
       }
     }
 
+    // Record the current time for this IP address
     localRequestHistory.set(userIp, now);
 
+    // Keep memory clean: if the list gets too large, wipe it to keep it lightweight
     if (localRequestHistory.size > 1000) {
       localRequestHistory.clear();
     }
-    // --- END ---
+    // --- RATE LIMIT BOUNCER END ---
 
     const googleResponse = await fetch(GOOGLE_URL, {
       method: 'POST',
