@@ -15,7 +15,7 @@ export default async function handler(req, res) {
       bodyData = JSON.parse(bodyData);
     }
 
-    const { path, ua } = bodyData;
+    const { path, ua, referrer, lang, tz, screen, viewport } = bodyData;
 
     const rawIp = req.headers['x-vercel-forwarded-for'] || req.headers['x-real-ip'] || 'Unknown';
     const userIp = rawIp.split(',')[0].trim();
@@ -36,6 +36,24 @@ export default async function handler(req, res) {
       localRequestHistory.clear();
     }
 
+    // Geo Lkup
+    let geo = { country: 'Unknown', region: 'Unknown', city: 'Unknown' };
+    try {
+      if (userIp && userIp !== 'Unknown') {
+        const geoRes = await fetch(`http://ip-api.com/json/${userIp}?fields=status,country,regionName,city`);
+        const geoData = await geoRes.json();
+        if (geoData.status === 'success') {
+          geo = {
+            country: geoData.country || 'Unknown',
+            region: geoData.regionName || 'Unknown',
+            city: geoData.city || 'Unknown'
+          };
+        }
+      }
+    } catch (geoError){
+      // fail silently
+    }
+
     const googleResponse = await fetch(GOOGLE_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -43,7 +61,15 @@ export default async function handler(req, res) {
         token: SECRET_TOKEN,
         path: path || '/',
         ua: ua || 'Unknown',
-        ip: userIp
+        ip: userIp,
+        referrer: referrer || 'direct',
+        lang: lang || 'Unknown',
+        tz: tz || 'Unknown',
+        screen: screen || "Unknown",
+        viewport: viewport || 'Unknown',
+        country: geo.country,
+        region: geo.region,
+        city: geo.city
       })
     });
 

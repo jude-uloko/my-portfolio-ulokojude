@@ -5,7 +5,12 @@ window.addEventListener('DOMContentLoaded', () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         path: window.location.pathname + window.location.search,
-        ua: window.navigator.userAgent
+        ua: window.navigator.userAgent,
+        referrer: document.referrer || 'direct',
+        lang: navigator.language,
+        tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        screen: `${window.screen.width}x${window.screen.height}`,
+        viewport: `${window.innerWidth}x${window.innerHeight}`
       })
     })
     .catch(() => { /* Fail silently */ });
