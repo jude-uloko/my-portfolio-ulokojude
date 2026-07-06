@@ -75,7 +75,6 @@ export default async function handler(req, res) {
 
     const resultText = await googleResponse.text();
     return res.status(200).send(resultText);
-
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
