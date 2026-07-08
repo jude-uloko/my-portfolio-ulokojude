@@ -180,3 +180,54 @@ footer {
     transition: none !important;
   }
 }
+
+
+/* Layout Capsule Wrapper */
+.github-cta-capsule {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #0f172a; /* Slate 900 */
+  border: 1px solid #1e293b; /* Slate 800 */
+  padding: 4px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Master Shared Link Properties */
+.github-cta-capsule a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* Primary Button Design */
+.github-btn-primary {
+  color: #ffffff;
+  background-color: #020617; /* Slate 950 */
+  border: 1px solid #334155; /* Slate 700 */
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+.github-btn-primary:hover {
+  border-color: #7c3aed; /* Emerald Hover Frame */
+  color: #7c3aed; /* Emerald 400 Text */
+}
+
+/* Smooth Arrow Interaction */
+.github-btn-primary .arrow-icon {
+  color: #64748b;
+  transition: transform 0.2s ease;
+}
+
+.github-btn-primary:hover .arrow-icon {
+  color: #7c3aed;
+  transform: translate(2px, -2px);
+}
