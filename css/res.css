@@ -209,7 +209,7 @@ footer {
 
 /* Primary Button Design */
 .github-btn-primary {
-  color: #ffffff;
+  color: var(--muted);
   background-color: var(--bg);; /* Slate 950 */
   border: 1px solid #334155; /*Slate 700*/
   padding: 8px 14px;
