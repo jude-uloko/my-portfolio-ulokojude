@@ -33,8 +33,8 @@ const projects = [
   }, {
     type: 'web design',
     title: 'FluxResponse',
-    desc: `FluxResponse is an open-source Python 
-            tool that takes the "manual labor" out 
+    desc: `FluxResponse is an open-source tool 
+            that takes the "manual labor" out 
             of web design. Stop writing hundreds 
             of media queries. Feed your code into 
             the system, and get a high-speed, 
