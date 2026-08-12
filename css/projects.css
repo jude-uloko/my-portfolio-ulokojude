@@ -77,7 +77,7 @@
   border-radius: 4px;
 }
 
-.project-status {
+.in_dev {
   display: inline-flex;
   align-items: center; 
   gap: 0.4rem;
@@ -86,12 +86,30 @@
   margin-top: 1rem;
 }
 
-.project-status::before {
+.in_dev::before {
   content: '';
   width: 6px; height: 6px;
   border-radius: 50%; 
   background: #f59e0b;
 }
+
+.in_dev {
+  display: inline-flex;
+  align-items: center; 
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: #f59e0b;
+  margin-top: 1rem;
+}
+
+.in_dev::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%; 
+  background: #f59e0b;
+}
+
+
 
 /* Tablet */
 @media (max-width: 1024px) {

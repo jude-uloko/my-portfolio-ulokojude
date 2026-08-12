@@ -15,7 +15,8 @@ const projects = [
       'Rest API'
     ],
     githubUrl: 'https://github.com/jude-uloko/Foliohub',
-    status: 'In Development'
+    status: 'In Development',
+    stat_col: 'in_dev'
   }, {
     type: 'e-commerce',
     title: 'GrabBoss',
@@ -29,7 +30,8 @@ const projects = [
       'REST API'
     ],
     githubUrl: 'https://github.com/jude-uloko/GrabBoss',
-    status: 'In Development'
+    status: 'In Development',
+    stat_col: 'in_dev'
   }, {
   type: 'web design',
   title: 'FluxResponse',
@@ -42,7 +44,8 @@ const projects = [
         you can paste your code and get a responsive version quickly.`,
   lang: ['Python'],
   githubUrl: 'https://github.com/jude-uloko/FluxResponse',
-  status: 'In Development'
+  status: 'In Development',
+  stat_col: 'in_dev'
 }, 
   // {
   //   type: 'software',
@@ -90,7 +93,7 @@ function renderProjects() {
           </svg>
         </a>
       </div><br>
-      <p class="project-status">${project.status}</p>
+      <p class="${project.stat_col} ">${project.status}</p>
     </div>
     
   `).join("");
