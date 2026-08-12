@@ -31,18 +31,19 @@ const projects = [
     githubUrl: 'https://github.com/jude-uloko/GrabBoss',
     status: 'In Development'
   }, {
-    type: 'web design',
-    title: 'FluxResponse',
-    desc: `FluxResponse is an open-source tool 
-            that takes the "manual labor" out 
-            of web design. Stop writing hundreds 
-            of media queries. Feed your code into 
-            the system, and get a high-speed, 
-            responsive CDN link in seconds. `,
-    lang: ['Python'],
-    githubUrl: 'https://github.com/jude-uloko/FluxResponse',
-    status: 'In Development'
-  }, 
+  type: 'web design',
+  title: 'FluxResponse',
+  desc: `
+        FluxResponse is a simple tool that 
+        helps make websites look good on every 
+        screen size without the stress of writing 
+        lots of custom CSS rules. Instead of manually 
+        adjusting layouts for mobile, tablet, and desktop, 
+        you can paste your code and get a responsive version quickly.`,
+  lang: ['Python'],
+  githubUrl: 'https://github.com/jude-uloko/FluxResponse',
+  status: 'In Development'
+}, 
   // {
   //   type: 'software',
   //   title: 'ecmap',
