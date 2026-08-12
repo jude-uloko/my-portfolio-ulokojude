@@ -18,7 +18,7 @@ const projects = [
     status: 'In Development'
   }, {
     type: 'e-commerce',
-    title: 'GrabBoss - A fully open source e-commerce platform',
+    title: 'GrabBoss',
     desc: `An open-source e-commerce portal that allows users 
           to create their own online stores, manage products, 
           and process payments. It is built with a focus 
@@ -42,6 +42,21 @@ const projects = [
     lang: ['Python'],
     githubUrl: 'https://github.com/jude-uloko/FluxResponse',
     status: 'In Development'
+  }, {
+    type: 'software',
+    title: 'ecmap',
+    desc: `ECMAP is an advanced, post-exploitation 
+    defense architecture designed to mitigate unauthorized 
+    server reconnaissance and lateral movement. It employs 
+    a multi-layered approach, including dynamic port 
+    obfuscation, adaptive firewall rules, and real-time 
+    monitoring to detect and neutralize potential threats. 
+    ECMAP is ideal for organizations seeking to enhance 
+    their cybersecurity posture against sophisticated attacks.`,
+
+    lang: ['C'],
+    githubUrl: 'https://github.com/jude-uloko/ecmap',
+    status: 'Archived'
   }
 ];
 
