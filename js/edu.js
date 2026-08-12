@@ -19,7 +19,10 @@ const projects = [
   }, {
     type: 'e-commerce',
     title: 'GrabBoss - A fully open source e-commerce platform',
-    desc: 'An open-source e-commerce platform',
+    desc: `An open-source e-commerce portal that allows users 
+          to create their own online stores, manage products, 
+          and process payments. It is built with a focus 
+          on scalability and ease of use.`,
     lang: [
       'React', 'Tailwind', 
       'Node.js/Express', 'MongoDB', 
