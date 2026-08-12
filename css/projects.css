@@ -100,8 +100,8 @@
   }
 }
 
-/* Mobile */
-@media (max-width: 560px) {
+/* Medium / small screens */
+@media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
