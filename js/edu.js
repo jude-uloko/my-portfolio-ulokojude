@@ -14,7 +14,7 @@ const projects = [
       'Node.js/Express', 'MongoDB', 
       'Rest API'
     ],
-    githubUrl: 'https://github.com/ulokojude/Foliohub',
+    githubUrl: 'https://github.com/jude-uloko/Foliohub',
     status: 'In Development'
   }, {
     type: 'e-commerce',
@@ -25,7 +25,7 @@ const projects = [
       'Node.js/Express', 'MongoDB', 
       'REST API'
     ],
-    githubUrl: 'https://github.com/ulokojude/GrabBoss',
+    githubUrl: 'https://github.com/jude-uloko/GrabBoss',
     status: 'In Development'
   }, {
     type: 'web design',
@@ -37,7 +37,7 @@ const projects = [
             the system, and get a high-speed, 
             responsive CDN link in seconds. `,
     lang: ['Python'],
-    githubUrl: 'https://github.com/ulokojude/FluxResponse',
+    githubUrl: 'https://github.com/jude-uloko/FluxResponse',
     status: 'In Development'
   }
 ];
