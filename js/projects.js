@@ -106,7 +106,8 @@ function renderProjects() {
             ? `<span class="pr_ready">
                 <a href="${project.link}" target="_blank" rel="noreferrer">Visit Project</a>
               </span>`
-            : ""}
+            : ""
+          }
         </div>
       </div>
     `;
