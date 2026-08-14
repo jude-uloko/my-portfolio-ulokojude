@@ -48,7 +48,7 @@ const projects = [
   githubUrl: 'https://github.com/jude-uloko/FluxResponse',
   status: 'In Development',
   stat_col: 'in_dev',
-  link: 'gf'
+  link: ''
 }, 
   // {
   //   type: 'software',
