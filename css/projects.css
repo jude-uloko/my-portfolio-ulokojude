@@ -77,13 +77,21 @@
   border-radius: 4px;
 }
 
+.project-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
 .in_dev {
   display: inline-flex;
   align-items: center; 
   gap: 0.4rem;
   font-size: 0.78rem;
   color: #f59e0b;
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 .in_dev::before {
@@ -99,7 +107,7 @@
   gap: 0.4rem;
   font-size: 0.78rem;
   color: #34fa0c;
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 .pr_ready::before {
@@ -123,6 +131,12 @@
   width: 6px; height: 6px;
   border-radius: 50%; 
   background: #bbb19f;
+}
+
+.pr_ready a {
+  color: #34fa0c;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 
