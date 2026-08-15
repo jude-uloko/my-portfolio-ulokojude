@@ -24,7 +24,7 @@ const projects = [
     desc: `An open-source e-commerce portal that allows users 
           to create their own online stores, manage products, 
           and process payments. It is built with a focus 
-          on scalability and ease of use.`,
+          on security, scalability and ease of use.`,
     lang: [
       'React', 'Tailwind', 
       'Node.js/Express', 'MongoDB', 
