@@ -20,7 +20,7 @@ const projects = [
     link: ''
   }, {
     type: 'e-commerce',
-    title: 'GrabBoss',
+    title: 'Avara',
     desc: `An open-source e-commerce portal that allows users 
           to create their own online stores, manage products, 
           and process payments. It is built with a focus 
