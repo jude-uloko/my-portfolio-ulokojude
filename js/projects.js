@@ -30,7 +30,7 @@ const projects = [
       'Node.js/Express', 'MongoDB', 
       'REST API'
     ],
-    githubUrl: 'https://github.com/jude-uloko/GrabBoss',
+    githubUrl: 'https://github.com/jude-uloko/Avara',
     status: 'In Development',
     stat_col: 'in_dev',
     link: ''
