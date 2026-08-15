@@ -22,8 +22,8 @@ function sendMessage(event) {
     event.preventDefault();
   }
 
-  const whatsapp = document.getElementById('send-whatsapp').value.trim();
-  const message = document.getElementById('send-message').value.trim();
+  const name = document.getElementById('send-name').value.trim();
+  const service = document.getElementById('send-service').value.trim();
   const feedback = document.getElementById('form-feedback');
   const btn = document.querySelector('.send-btn');
   const btnText = document.getElementById('btn-text');
@@ -34,7 +34,7 @@ function sendMessage(event) {
     feedback.className = `form-feedback alert alert-dismissible alert-${type}`;
     feedback.textContent = message;
 
-    const inputs = [document.getElementById('send-whatsapp'), document.getElementById('send-message')];
+    const inputs = [document.getElementById('send-name'), document.getElementById('send-service')];
     inputs.forEach(input => {
       if (!input) return;
       input.classList.remove('warning-shake', 'success-glow');
@@ -55,7 +55,7 @@ function sendMessage(event) {
     }
 
     if (type === 'success') {
-      const inputs = [document.getElementById('send-whatsapp'), document.getElementById('send-message')];
+      const inputs = [document.getElementById('send-name'), document.getElementById('send-service')];
       inputs.forEach(input => {
         if (input) input.value = '';
       });
@@ -81,13 +81,13 @@ function sendMessage(event) {
   feedback.className = 'form-feedback';
   feedback.textContent = '';
 
-  if (!message && !whatsapp) {
-    showAlert('Please enter required information', 'warning');
+  if (!name && !service) {
+    showAlert('Please enter your name and select a service', 'warning');
     return;
   }
 
-  if (!message || !whatsapp) {
-    showAlert('Please complete the required informations', 'warning');
+  if (!name || !service) {
+    showAlert('Please complete all required fields', 'warning');
     return;
   }
 
@@ -97,10 +97,9 @@ function sendMessage(event) {
 
   showAlert('Message sent successfully. Opening WhatsApp...', 'success');
 
-  // Opening whatsApp
   const whatsApp = '2348161122861';
   const waText = encodeURIComponent(
-    `Hi Jude, I\'m reaching out via your portfolio.\n\nMessage: ${message}`
+    `Hi Jude, my name is ${name}. I need help with: ${service}.`
   );
   setTimeout(() => {
     window.location.href = `https://api.whatsapp.com/send?phone=${whatsApp}&text=${waText}`;
