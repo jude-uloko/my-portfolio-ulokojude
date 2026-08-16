@@ -16,24 +16,20 @@ window.addEventListener('DOMContentLoaded', () => {
     .catch(() => { /* Fail silently */ });
   })();
 });
-
 function sendMessage(event) {
   if (event) {
     event.preventDefault();
   }
-
   const name = document.getElementById('send-name').value.trim();
   const service = document.getElementById('send-service').value.trim();
   const feedback = document.getElementById('form-feedback');
   const btn = document.querySelector('.send-btn');
   const btnText = document.getElementById('btn-text');
   const btnLoader = document.getElementById('btn-loader');
-
   const showAlert = (message, type) => {
     feedback.innerHTML = '';
     feedback.className = `form-feedback alert alert-dismissible alert-${type}`;
     feedback.textContent = message;
-
     const inputs = [document.getElementById('send-name'), document.getElementById('send-service')];
     inputs.forEach(input => {
       if (!input) return;
@@ -45,7 +41,6 @@ function sendMessage(event) {
         input.classList.add('success-glow');
       }
     });
-
     if (type === 'success' || type === 'warning') {
       window.clearTimeout(showAlert.timeoutId);
       showAlert.timeoutId = window.setTimeout(() => {
@@ -53,14 +48,12 @@ function sendMessage(event) {
         feedback.textContent = '';
       }, 5000);
     }
-
     if (type === 'success') {
       const inputs = [document.getElementById('send-name'), document.getElementById('send-service')];
       inputs.forEach(input => {
         if (input) input.value = '';
       });
     }
-
     const closeButton = document.createElement('button');
     closeButton.type = 'button';
     closeButton.className = 'btn-close';
@@ -74,29 +67,22 @@ function sendMessage(event) {
       feedback.className = 'form-feedback';
       feedback.textContent = '';
     });
-
     feedback.appendChild(closeButton);
   };
-
   feedback.className = 'form-feedback';
   feedback.textContent = '';
-
   if (!name && !service) {
     showAlert('Please enter your name and select a service', 'warning');
     return;
   }
-
   if (!name || !service) {
     showAlert('Please complete all required fields', 'warning');
     return;
   }
-
   btn.disabled = true;
   btnText.style.display = 'none';
   btnLoader.style.display = 'inline';
-
   showAlert('Message sent successfully. Opening WhatsApp...', 'success');
-
   const whatsApp = '2348161122861';
   const waText = encodeURIComponent(
     `Hi Jude, my name is ${name}. I need help with: ${service}.`
@@ -108,10 +94,8 @@ function sendMessage(event) {
     btnLoader.style.display = 'none';
   }, 1200);
 }
-
 const contactForm = document.getElementById('contact-form');
 const scrollToggle = document.getElementById('scroll-toggle');
-
 if (contactForm) {
   contactForm.addEventListener('submit', sendMessage);
 
@@ -122,23 +106,19 @@ if (contactForm) {
     }
   });
 }
-
 if (scrollToggle) {
   scrollToggle.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
   scrollToggle.setAttribute('aria-label', 'Scroll to top');
 }
-
 const navToggle = document.getElementById('nav-toggle');
 const nav = document.querySelector('nav');
-
 if (navToggle && nav) {
   navToggle.addEventListener('click', () => {
     const expanded = nav.classList.toggle('nav-expanded');
     navToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
   });
-
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       nav.classList.remove('nav-expanded');
@@ -146,9 +126,7 @@ if (navToggle && nav) {
     });
   });
 }
-
 const revealSections = document.querySelectorAll('section');
-
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     entry.target.classList.toggle('reveal-visible', entry.isIntersecting);
@@ -157,6 +135,5 @@ const revealObserver = new IntersectionObserver((entries) => {
   threshold: 0.05,
   rootMargin: '0px 0px -30% 0px',
 });
-
 revealSections.forEach(section => revealObserver.observe(section));
 

@@ -20,21 +20,16 @@ const skillsData = {
     { name: 'Github', icon: 'devicon-github-original colored', link: 'https://github.com/jude-uloko' }
   ]
 };
-
 function renderSkills() {
   const skillsContainer = document.getElementById('skills-container');
-  
   if (!skillsContainer) return;
-
   let skillsHTML = '';
-
   Object.entries(skillsData).forEach(([category, skills]) => {
     skillsHTML += `
       <div class="skill-category">
         <p class="skill-category-label">${category}</p>
         <div class="skills-grid">
     `;
-
     skills.forEach(skill => {
       if (skill.link) {
         skillsHTML += `
@@ -54,16 +49,13 @@ function renderSkills() {
         `;
       }
     });
-
     skillsHTML += `
         </div>
       </div>
     `;
   });
-
   skillsContainer.innerHTML = skillsHTML;
 }
-
 // Render skills when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', renderSkills);

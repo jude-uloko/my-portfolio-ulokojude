@@ -73,7 +73,6 @@ function renderProjects() {
     const hasLink = project.link && project.link.trim();
     const statusClass = hasLink ? 'pr_ready' : (project.stat_col || 'in_dev');
     const statusText = hasLink ? 'Ready' : project.status;
-
     return `
       <div class="project-card">
         <p class="project-type"> ${project.type} </p>
@@ -113,5 +112,4 @@ function renderProjects() {
     `;
   }).join("");
 }
-
 renderProjects();
