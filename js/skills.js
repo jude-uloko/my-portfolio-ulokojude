@@ -7,14 +7,14 @@ const skillsData = {
     { name: 'Bootstrap', icon: 'devicon-bootstrap-plain colored' }
   ],
   Backend: [
-    { name: 'Node.js', icon: 'devicon-nodejs-plain colored' },
+  //  { name: 'Node.js', icon: 'devicon-nodejs-plain colored' },
     { name: 'PHP', icon: 'devicon-php-plain colored' },
-    { name: 'MongoDB', icon: 'devicon-mongodb-plain colored' },
+   // { name: 'MongoDB', icon: 'devicon-mongodb-plain colored' },
     { name: 'SQL', icon: 'devicon-mysql-plain colored' }
   ],
   Mobile: [
-    { name: 'React Native', icon: 'devicon-react-original colored' },
-    { name: 'Flutter', icon: 'devicon-flutter-plain colored' }
+   // { name: 'React Native', icon: 'devicon-react-original colored' },
+   // { name: 'Flutter', icon: 'devicon-flutter-plain colored' }
   ],
   Tools: [
     { name: 'Github', icon: 'devicon-github-original colored', link: 'https://github.com/jude-uloko' }
