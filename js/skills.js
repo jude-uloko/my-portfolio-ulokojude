@@ -38,7 +38,7 @@ function renderSkills() {
           <div class="skill-chip">
             <a href="${skill.link}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: white;">
               <span class="icon">
-                <img src="${skill.icon}" alt="${skill.name}" width="60" height="60" />
+                <i class=" {skill.icon} ">
               </span>${skill.name}
             </a>
           </div>
