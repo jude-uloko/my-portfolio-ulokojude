@@ -18,7 +18,8 @@ const skillsData = {
     // { name: 'Cordova', icon: 'devicon-cordova-plain' }
   ],
   Tools: [
-    { name: 'Github', icon: 'devicon-github-original colored', link: 'https://github.com/jude-uloko' }
+    { name: 'Github', icon: 'devicon-github-original colored', link: 'https://github.com/jude-uloko' },
+    { name: 'Vscode', icon: 'devicon-vscode-plain colored' }
   ]
 };
 function renderSkills() {
