@@ -126,14 +126,14 @@ if (navToggle && nav) {
     });
   });
 }
-const revealSections = document.querySelectorAll('section');
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    entry.target.classList.toggle('reveal-visible', entry.isIntersecting);
-  });
-}, {
-  threshold: 0.05,
-  rootMargin: '0px 0px -30% 0px',
-});
+// const revealSections = document.querySelectorAll('section');
+// const revealObserver = new IntersectionObserver((entries) => {
+//  entries.forEach(entry => {
+    // entry.target.classList.toggle('reveal-visible', entry.isIntersecting);
+//  });
+// }, {
+//  threshold: 0.05,
+//  rootMargin: '0px 0px -30% 0px',
+// });
 revealSections.forEach(section => revealObserver.observe(section));
 
