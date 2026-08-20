@@ -19,7 +19,7 @@ const skillsData = {
   ],
   Tools: [
     { name: 'Github', icon: 'devicon-github-original colored', link: 'https://github.com/jude-uloko' },
-    { name: 'VS Code', icon: 'devicon-vscode-plain colored' }
+    { name: 'VS Code', icon: 'devicon-vscode-plain colored', link: 'https://GitHub.com/microsoft/vscode' }
   ]
 };
 function renderSkills() {
