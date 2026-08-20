@@ -1,6 +1,6 @@
 (function () {
   const heroPhotos = [
-    'assets/pic1.png',
+    'https://drive.google.com/file/d/1ZZzHqNn0-90cNR0d6lDv09qY98NsM2tX/view?usp=drivesdk',
   ];
   const heroImage = document.getElementById('hero-phtto');
   if (!heroImage || heroPhotos.length === 0) {
