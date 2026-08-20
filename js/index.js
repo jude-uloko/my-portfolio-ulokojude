@@ -135,5 +135,5 @@ if (navToggle && nav) {
 //  threshold: 0.05,
 //  rootMargin: '0px 0px -30% 0px',
 // });
-revealSections.forEach(section => revealObserver.observe(section));
+// revealSections.forEach(section => revealObserver.observe(section));
 
