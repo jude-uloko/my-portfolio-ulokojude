@@ -15,7 +15,7 @@ const skillsData = {
   Mobile: [
    // { name: 'React Native', icon: 'devicon-react-original colored' },
    // { name: 'Flutter', icon: 'devicon-flutter-plain colored' }
-    { name: 'Cordova', icon: 'devicon-cordova-plain' }
+    // { name: 'Cordova', icon: 'devicon-cordova-plain' }
   ],
   Tools: [
     { name: 'Github', icon: 'devicon-github-original colored', link: 'https://github.com/jude-uloko' }
