@@ -1,6 +1,6 @@
 (function () {
   const heroPhotos = [
-    'https://drive.google.com/file/d/1ZZzHqNn0-90cNR0d6lDv09qY98NsM2tX/view?usp=drivesdk',
+    'https://lh3.googleusercontent.com/d/1ZZzHqNn0-90cNR0d6lDv09qY98NsM2tX',
   ];
   const heroImage = document.getElementById('hero-phtto');
   if (!heroImage || heroPhotos.length === 0) {
