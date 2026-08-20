@@ -133,7 +133,7 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
  }, {
   threshold: 0.05,
-  rootMargin: '0px 0px -30% 0px',
+  rootMargin: '0px 0px -3% 0px',
 });
 revealSections.forEach(section => revealObserver.observe(section));
 
