@@ -1,6 +1,5 @@
 /* Contact */
 #contact { text-align: center; }
-
 .contact-card {
   display: inline-block;
   background: var(--surface);
@@ -12,7 +11,6 @@
   margin: 1rem auto 0;
   text-align: center;
 }
-
 .form-group { margin-bottom: 1.5rem; }
 .form-label {
   display: block;
@@ -23,7 +21,6 @@
   color: var(--muted);
   margin-bottom: 0.5rem;
 }
-
 .form-input, .form-textarea {
   width: 100%;
   background: var(--bg);
@@ -36,19 +33,15 @@
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
-
 .form-input:focus, .form-textarea:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--glow);
 }
-
 .form-input::placeholder, .form-textarea::placeholder { color: #3a3a55; }
-
 .form-textarea {
   min-height: 140px;
   resize: vertical;
 }
-
 .send-btn {
   width: 100%;
   background: var(--accent);
@@ -63,27 +56,22 @@
   transition: background 0.2s, transform 0.15s;
   margin-top: 0.5rem;
 }
-
 .send-btn:hover {
   background: #6d28d9;
   transform: translateY(-2px);
 }
-
 .send-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
   transform: none;
 }
-
 .contact-intro-wrap {
   position: relative;
   margin-bottom: 1.5rem;
 }
-
 .contact-intro-wrap p {
   color: var(--muted);
 }
-
 .form-feedback {
   margin-top: 0;
   margin-bottom: 0;
@@ -105,21 +93,17 @@
   position: relative;
   z-index: 2;
 }
-
 .form-feedback:empty {
   display: none;
 }
-
 .form-feedback.success {
   color: #d4f8e0;
   border-color: rgba(74, 222, 128, 0.25);
 }
-
 .form-feedback.error {
   color: #ffe2e2;
   border-color: rgba(248, 113, 113, 0.25);
 }
-
 .alert {
   position: relative;
   padding: 0.6rem 2.4rem 0.6rem 0.8rem;
@@ -131,25 +115,21 @@
   justify-content: center;
   max-width: 100%;
 }
-
 .alert-success {
   background: rgba(34, 197, 94, 0.16);
   color: #d4f8e0;
   border-color: rgba(74, 222, 128, 0.2);
   font-weight: 500;
 }
-
 .alert-warning {
   background: rgba(251, 191, 36, 0.16);
   color: #fff4d6;
   border-color: rgba(251, 191, 36, 0.2);
   font-weight: 500;
 }
-
 .alert-dismissible {
   padding-right: 3rem;
 }
-
 .btn-close {
   position: absolute;
   top: 0.55rem;
@@ -163,18 +143,15 @@
   opacity: 0.8;
   color: inherit;
 }
-
 .btn-close:hover,
 .btn-close:focus {
   opacity: 1;
   outline: none;
 }
-
 .warning-shake {
   animation: warning-pulse 0.6s ease 2;
   border-color: #f87171;
 }
-
 @keyframes warning-pulse {
   0%, 100% {
     border-color: var(--border);
@@ -189,12 +166,10 @@
     box-shadow: 0 0 0 6px rgba(248, 113, 113, 0.12);
   }
 }
-
 .success-glow {
   animation: success-pulse 0.8s ease 1;
   border-color: #4ade80;
 }
-
 @keyframes success-pulse {
   0% {
     border-color: var(--border);
