@@ -4,14 +4,12 @@
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
-
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
   align-items: stretch;
 }
-
 .project-card {
   background: var(--bg);
   border: 1px solid var(--border);
@@ -25,7 +23,6 @@
   display: flex;
   flex-direction: column;
 }
-
 .project-card::before {
   content: '';
   position: absolute;
@@ -33,12 +30,10 @@
   height: 3px;
   background: linear-gradient(90deg, var(--accent), var(--accent2));
 }
-
 .project-card:hover {
   border-color: var(--accent);
   transform: translateY(-4px);
 }
-
 .project-type {
   font-family: var(--font-display);
   font-size: 0.65rem;
@@ -47,27 +42,23 @@
   color: var(--accent2);
   margin-bottom: 0.75rem;
 }
-
 .project-title {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--white);
   margin-bottom: 0.75rem;
 }
-
 .project-desc {
   color: var(--muted);
   font-size: 0.9rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
-
 .project-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-
 .tag {
   font-size: 0.75rem;
   background: var(--surface);
@@ -76,7 +67,6 @@
   padding: 0.25rem 0.65rem;
   border-radius: 4px;
 }
-
 .project-meta {
   display: flex;
   align-items: center;
@@ -84,7 +74,6 @@
   gap: 0.75rem;
   margin-top: 1rem;
 }
-
 .in_dev {
   display: inline-flex;
   align-items: center; 
@@ -93,14 +82,12 @@
   color: #f59e0b;
   margin-top: 0;
 }
-
 .in_dev::before {
   content: '';
   width: 6px; height: 6px;
   border-radius: 50%; 
   background: #f59e0b;
 }
-
 .pr_ready {
   display: inline-flex;
   align-items: center; 
@@ -109,14 +96,12 @@
   color: #34fa0c;
   margin-top: 0;
 }
-
 .pr_ready::before {
   content: '';
   width: 6px; height: 6px;
   border-radius: 50%; 
   background: #34fa0c;
 }
-
 .pr_archived {
   display: inline-flex;
   align-items: center; 
@@ -125,43 +110,34 @@
   color: #bbb19f;
   margin-top: 1rem;
 }
-
 .pr_archived::before {
   content: '';
   width: 6px; height: 6px;
   border-radius: 50%; 
   background: #bbb19f;
 }
-
 .pr_ready a {
   color: #34fa0c;
   text-decoration: none;
   font-weight: 500;
 }
-
-
-
 /* Tablet */
 @media (max-width: 1024px) {
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-
 @media (max-width: 1024px) {
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-
-
 /* Medium / small screens */
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-
   .project-card {
     width: 100%;
   }
